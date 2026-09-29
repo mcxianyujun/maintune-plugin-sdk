@@ -10,7 +10,7 @@ clean Python 3.12 environment. Do not assume the package is available from
 PyPI until a separate publication is verified. The host also stages this SDK
 into each isolated v2 plugin environment.
 
-For development from the public repository, install with
+After this repository is publicly published, it can be installed with
 `python -m pip install git+https://github.com/mcxianyujun/maintune-plugin-sdk.git`.
 The SDK is versioned independently of Maintune Core. `2.0.0` matches the
 Plugin API v2 preview contract; it is not a promise that every experimental
