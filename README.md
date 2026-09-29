@@ -14,10 +14,10 @@ The SDK is versioned independently of Maintune Core. `2.0.0` matches the
 Plugin API v2 preview contract; it is not a promise that every experimental
 Hook is frozen for Stable.
 
-The [developer guide](https://github.com/mcxianyujun/maintune/blob/main/docs/plugin-api-v2.md) and
-[API reference](https://github.com/mcxianyujun/maintune/blob/main/docs/plugin-api-reference.md) describe the public
-host-side contracts and capability boundaries. Installing the SDK alone does
-not grant a plugin permission to read tasks or write to GitHub.
+The [developer guide](https://github.com/mcxianyujun/maintune/blob/main/docs/plugin-api-v2.md)
+describes the published host-side contract and capability boundaries.
+Installing the SDK alone does not grant a plugin permission to read tasks or
+write to GitHub.
 
 The isolated runtime launches `python -m maintune_plugin_sdk.runner` in the
 plugin's own environment. Core and the runner exchange UTF-8, newline-delimited
@@ -60,7 +60,8 @@ Hooks, services, model providers, and sandbox providers receive their input as
 one JSON object. Tool handlers receive only the model-supplied named arguments
 plus an optional first `context` or `ctx` parameter. The context exposes
 plugin identity, configured data directory, config, stable invocation ID,
-optional task/agent IDs, documented Core calls, and advisory cancellation:
+documented Core calls, and advisory cancellation. Task and Agent IDs are not
+provided on `PluginContext` in Preview 3:
 
 ```python
 async def long_tool(context: PluginContext, query: str) -> str:
