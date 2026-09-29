@@ -1,0 +1,18 @@
+name: SDK CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install '.[dev]'
+      - run: python -m pytest -q tests
+      - run: python -m pip wheel --no-deps --wheel-dir dist .
+      - run: python -m pip check
