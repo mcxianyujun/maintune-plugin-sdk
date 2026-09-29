@@ -3,15 +3,13 @@
 Public Python SDK for Maintune Plugin API v2. It requires Python 3.12 or later
 and has no runtime dependency on Maintune Core or third-party packages.
 
-This package is independently buildable under the MIT License. While Stable
-preparation is in progress, build a wheel from this directory with
-`python -m pip wheel --no-deps --wheel-dir dist .`, then install that wheel in a
-clean Python 3.12 environment. Do not assume the package is available from
-PyPI until a separate publication is verified. The host also stages this SDK
-into each isolated v2 plugin environment.
-
-After this repository is publicly published, it can be installed with
-`python -m pip install git+https://github.com/mcxianyujun/maintune-plugin-sdk.git`.
+This package is independently buildable under the MIT License. Install the
+public repository with
+`python -m pip install git+https://github.com/mcxianyujun/maintune-plugin-sdk.git`,
+or build a wheel with `python -m pip wheel --no-deps --wheel-dir dist .` and
+install that wheel in a clean Python 3.12 environment. It has not been
+published to PyPI. The host also stages this SDK into each isolated v2 plugin
+environment.
 The SDK is versioned independently of Maintune Core. `2.0.0` matches the
 Plugin API v2 preview contract; it is not a promise that every experimental
 Hook is frozen for Stable.
